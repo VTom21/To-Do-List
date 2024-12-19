@@ -208,9 +208,10 @@ namespace ToDo
             // 
             // Character
             // 
-            this.Character.Location = new System.Drawing.Point(339, 675);
+            this.Character.Location = new System.Drawing.Point(321, 666);
             this.Character.Name = "Character";
-            this.Character.Size = new System.Drawing.Size(75, 63);
+            this.Character.Size = new System.Drawing.Size(91, 71);
+            this.Character.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.Character.TabIndex = 6;
             this.Character.TabStop = false;
             // 

@@ -79,5 +79,10 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Sprites\Mage.png" />
+    <Content Include="Sprites\Rogue.png" />
+    <Content Include="Sprites\Viking.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
