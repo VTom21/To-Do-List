@@ -200,7 +200,7 @@ namespace ToDo
             this.Ranking_label.AutoSize = true;
             this.Ranking_label.Font = new System.Drawing.Font("Sitka Text", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.Ranking_label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(95)))), ((int)(((byte)(95)))));
-            this.Ranking_label.Location = new System.Drawing.Point(265, 706);
+            this.Ranking_label.Location = new System.Drawing.Point(117, 706);
             this.Ranking_label.Name = "Ranking_label";
             this.Ranking_label.Size = new System.Drawing.Size(50, 19);
             this.Ranking_label.TabIndex = 4;
@@ -208,9 +208,9 @@ namespace ToDo
             // 
             // Character
             // 
-            this.Character.Location = new System.Drawing.Point(321, 666);
+            this.Character.Location = new System.Drawing.Point(285, 623);
             this.Character.Name = "Character";
-            this.Character.Size = new System.Drawing.Size(91, 71);
+            this.Character.Size = new System.Drawing.Size(139, 115);
             this.Character.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.Character.TabIndex = 6;
             this.Character.TabStop = false;

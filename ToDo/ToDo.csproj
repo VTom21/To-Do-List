@@ -80,6 +80,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Sprites\Jinn.png" />
     <Content Include="Sprites\Mage.png" />
     <Content Include="Sprites\Rogue.png" />
     <Content Include="Sprites\Viking.png" />
