@@ -44,7 +44,9 @@ namespace ToDo
             this.Home = new System.Windows.Forms.Button();
             this.Ranking_label = new System.Windows.Forms.Label();
             this.Character = new System.Windows.Forms.PictureBox();
+            this.Bar = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.Character)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Bar)).BeginInit();
             this.SuspendLayout();
             // 
             // Add
@@ -102,7 +104,7 @@ namespace ToDo
             this.lvl_label.AutoSize = true;
             this.lvl_label.Font = new System.Drawing.Font("Sitka Text", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lvl_label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(95)))), ((int)(((byte)(95)))));
-            this.lvl_label.Location = new System.Drawing.Point(12, 706);
+            this.lvl_label.Location = new System.Drawing.Point(12, 687);
             this.lvl_label.Name = "lvl_label";
             this.lvl_label.Size = new System.Drawing.Size(34, 19);
             this.lvl_label.TabIndex = 4;
@@ -113,7 +115,7 @@ namespace ToDo
             this.xp_label.AutoSize = true;
             this.xp_label.Font = new System.Drawing.Font("Sitka Text", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.xp_label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(95)))), ((int)(((byte)(95)))));
-            this.xp_label.Location = new System.Drawing.Point(46, 706);
+            this.xp_label.Location = new System.Drawing.Point(46, 687);
             this.xp_label.Name = "xp_label";
             this.xp_label.Size = new System.Drawing.Size(65, 19);
             this.xp_label.TabIndex = 5;
@@ -200,7 +202,7 @@ namespace ToDo
             this.Ranking_label.AutoSize = true;
             this.Ranking_label.Font = new System.Drawing.Font("Sitka Text", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.Ranking_label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(95)))), ((int)(((byte)(95)))));
-            this.Ranking_label.Location = new System.Drawing.Point(117, 706);
+            this.Ranking_label.Location = new System.Drawing.Point(117, 687);
             this.Ranking_label.Name = "Ranking_label";
             this.Ranking_label.Size = new System.Drawing.Size(50, 19);
             this.Ranking_label.TabIndex = 4;
@@ -215,12 +217,22 @@ namespace ToDo
             this.Character.TabIndex = 6;
             this.Character.TabStop = false;
             // 
+            // Bar
+            // 
+            this.Bar.Location = new System.Drawing.Point(16, 709);
+            this.Bar.Name = "Bar";
+            this.Bar.Size = new System.Drawing.Size(139, 21);
+            this.Bar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.Bar.TabIndex = 7;
+            this.Bar.TabStop = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(232)))), ((int)(((byte)(239)))));
             this.ClientSize = new System.Drawing.Size(424, 740);
+            this.Controls.Add(this.Bar);
             this.Controls.Add(this.Character);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -240,6 +252,7 @@ namespace ToDo
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.Character)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Bar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -261,6 +274,7 @@ namespace ToDo
         private Button Home;
         private Label Ranking_label;
         private PictureBox Character;
+        private PictureBox Bar;
     }
 }
 
