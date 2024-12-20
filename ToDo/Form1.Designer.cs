@@ -30,6 +30,7 @@ namespace ToDo
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.Add = new System.Windows.Forms.Button();
             this.Content = new System.Windows.Forms.CheckedListBox();
             this.Input = new System.Windows.Forms.TextBox();
@@ -45,6 +46,10 @@ namespace ToDo
             this.Ranking_label = new System.Windows.Forms.Label();
             this.Character = new System.Windows.Forms.PictureBox();
             this.Bar = new System.Windows.Forms.PictureBox();
+            this.PriorityBox = new System.Windows.Forms.ComboBox();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.Time_label = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.Character)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Bar)).BeginInit();
             this.SuspendLayout();
@@ -56,7 +61,7 @@ namespace ToDo
             this.Add.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Add.Font = new System.Drawing.Font("Sitka Text", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Add.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(95)))), ((int)(((byte)(95)))));
-            this.Add.Location = new System.Drawing.Point(101, 136);
+            this.Add.Location = new System.Drawing.Point(101, 133);
             this.Add.Name = "Add";
             this.Add.Size = new System.Drawing.Size(104, 45);
             this.Add.TabIndex = 0;
@@ -82,7 +87,7 @@ namespace ToDo
             this.Input.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Input.Font = new System.Drawing.Font("Sitka Text", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.Input.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(95)))), ((int)(((byte)(95)))));
-            this.Input.Location = new System.Drawing.Point(101, 105);
+            this.Input.Location = new System.Drawing.Point(101, 102);
             this.Input.Multiline = true;
             this.Input.Name = "Input";
             this.Input.Size = new System.Drawing.Size(214, 25);
@@ -94,7 +99,7 @@ namespace ToDo
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Sitka Text", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(95)))), ((int)(((byte)(95)))));
-            this.label1.Location = new System.Drawing.Point(157, 64);
+            this.label1.Location = new System.Drawing.Point(157, 61);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(101, 28);
             this.label1.TabIndex = 3;
@@ -129,7 +134,7 @@ namespace ToDo
             this.Remove.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Remove.Font = new System.Drawing.Font("Sitka Text", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Remove.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(95)))), ((int)(((byte)(95)))));
-            this.Remove.Location = new System.Drawing.Point(211, 136);
+            this.Remove.Location = new System.Drawing.Point(211, 133);
             this.Remove.Name = "Remove";
             this.Remove.Size = new System.Drawing.Size(104, 45);
             this.Remove.TabIndex = 0;
@@ -201,13 +206,13 @@ namespace ToDo
             // Ranking_label
             // 
             this.Ranking_label.AutoSize = true;
-            this.Ranking_label.Font = new System.Drawing.Font("Sitka Text", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.Ranking_label.Font = new System.Drawing.Font("Sitka Text", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.Ranking_label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(95)))), ((int)(((byte)(95)))));
-            this.Ranking_label.Location = new System.Drawing.Point(117, 687);
+            this.Ranking_label.Location = new System.Drawing.Point(190, 712);
             this.Ranking_label.Name = "Ranking_label";
-            this.Ranking_label.Size = new System.Drawing.Size(50, 19);
+            this.Ranking_label.Size = new System.Drawing.Size(47, 18);
             this.Ranking_label.TabIndex = 4;
-            this.Ranking_label.Text = "Novice";
+            this.Ranking_label.Text = "Rookie";
             // 
             // Character
             // 
@@ -222,10 +227,43 @@ namespace ToDo
             // 
             this.Bar.Location = new System.Drawing.Point(16, 709);
             this.Bar.Name = "Bar";
-            this.Bar.Size = new System.Drawing.Size(139, 21);
+            this.Bar.Size = new System.Drawing.Size(168, 21);
             this.Bar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.Bar.TabIndex = 7;
             this.Bar.TabStop = false;
+            // 
+            // PriorityBox
+            // 
+            this.PriorityBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(214)))), ((int)(((byte)(217)))));
+            this.PriorityBox.Font = new System.Drawing.Font("Sitka Text", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.PriorityBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(95)))), ((int)(((byte)(95)))));
+            this.PriorityBox.FormattingEnabled = true;
+            this.PriorityBox.Location = new System.Drawing.Point(308, 12);
+            this.PriorityBox.Name = "PriorityBox";
+            this.PriorityBox.Size = new System.Drawing.Size(104, 29);
+            this.PriorityBox.TabIndex = 8;
+            // 
+            // Time_label
+            // 
+            this.Time_label.AutoSize = true;
+            this.Time_label.Font = new System.Drawing.Font("Sitka Text", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.Time_label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(95)))), ((int)(((byte)(95)))));
+            this.Time_label.Location = new System.Drawing.Point(12, 17);
+            this.Time_label.Name = "Time_label";
+            this.Time_label.Size = new System.Drawing.Size(17, 19);
+            this.Time_label.TabIndex = 9;
+            this.Time_label.Text = "0";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Sitka Text", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(95)))), ((int)(((byte)(95)))));
+            this.label2.Location = new System.Drawing.Point(241, 17);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(61, 19);
+            this.label2.TabIndex = 10;
+            this.label2.Text = "Priority:";
             // 
             // Form1
             // 
@@ -233,6 +271,9 @@ namespace ToDo
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(232)))), ((int)(((byte)(239)))));
             this.ClientSize = new System.Drawing.Size(424, 740);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.Time_label);
+            this.Controls.Add(this.PriorityBox);
             this.Controls.Add(this.Bar);
             this.Controls.Add(this.Character);
             this.Controls.Add(this.label5);
@@ -276,6 +317,10 @@ namespace ToDo
         private Label Ranking_label;
         private PictureBox Character;
         private PictureBox Bar;
+        private ComboBox PriorityBox;
+        private Timer timer1;
+        private Label Time_label;
+        private Label label2;
     }
 }
 

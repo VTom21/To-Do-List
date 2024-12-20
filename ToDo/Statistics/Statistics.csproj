@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{FC14644E-211A-427F-9C2D-FA482519693C}</ProjectGuid>
+    <ProjectGuid>{9A42830A-00AA-425F-9B8D-B65F3ADFB370}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>ToDo</RootNamespace>
-    <AssemblyName>ToDo</AssemblyName>
+    <RootNamespace>Statistics</RootNamespace>
+    <AssemblyName>Statistics</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -75,33 +75,9 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="Bars\.vs\Bars\v16\.suo" />
-    <None Include="Bars\.vs\slnx.sqlite" />
-    <None Include="Bars\.vs\VSWorkspaceState.json" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Content Include="Bars\bar10_processed.jpg" />
-    <Content Include="Bars\bar11_processed.jpg" />
-    <Content Include="Bars\bar1_processed.jpg" />
-    <Content Include="Bars\bar2_processed.jpg" />
-    <Content Include="Bars\bar3_processed.jpg" />
-    <Content Include="Bars\bar4_processed.jpg" />
-    <Content Include="Bars\bar5_processed.jpg" />
-    <Content Include="Bars\bar6.jpg.png" />
-    <Content Include="Bars\bar7_processed.jpg" />
-    <Content Include="Bars\bar8.jpg.png" />
-    <Content Include="Bars\bar9_processed.jpg" />
-    <Content Include="Bars\sure1_processed.jpg" />
-    <Content Include="Bars\sure2_processed.jpg" />
-    <Content Include="Sprites\Jinn.png" />
-    <Content Include="Sprites\Mage.png" />
-    <Content Include="Sprites\Rogue.png" />
-    <Content Include="Sprites\Viking.png" />
-    <Content Include="Text Files\total time.txt" />
-  </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
