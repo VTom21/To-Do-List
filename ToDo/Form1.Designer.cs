@@ -62,6 +62,7 @@ namespace ToDo
             this.Add.TabIndex = 0;
             this.Add.Text = "Add Item";
             this.Add.UseVisualStyleBackColor = false;
+            this.Add.Click += new System.EventHandler(this.Add_Click);
             // 
             // Content
             // 
