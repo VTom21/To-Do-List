@@ -54,7 +54,12 @@ namespace ToDo
         public int hours = 0;
         public int total_time = 0;
 
+
         public string[] Rankings = new string[] { "Rookie", "Guardian", "Sergeant", "Novice", "Ace", "Iridescent" };
+
+        //Paths
+
+        public string home_path = @"C:\Users\Tomi\OneDrive\Asztali gép\To Do App\ToDo\ToDo\Home\bin\Debug\Home.exe";
 
         public string[] character_links = new string[] {
             @"C:\Users\Tomi\OneDrive\Asztali gép\To Do App\ToDo\ToDo\Sprites\Viking.png",
@@ -78,6 +83,10 @@ namespace ToDo
         @"C:\Users\Tomi\OneDrive\Asztali gép\To Do App\ToDo\ToDo\Bars\bar11.jpg"
         };
 
+        public string full_time_txt = @"C:\Users\Tomi\OneDrive\Asztali gép\To Do App\ToDo\ToDo\Text Files\total time.txt";
+        public string total_xp_txt = @"C:\Users\Tomi\OneDrive\Asztali gép\To Do App\ToDo\ToDo\Text Files\total xp.txt";
+        public string highest_lvl_txt = @"C:\Users\Tomi\OneDrive\Asztali gép\To Do App\ToDo\ToDo\Text Files\level.txt";
+
         public int XP = 0;
 
         public int level = 1;
@@ -86,11 +95,7 @@ namespace ToDo
 
         public int totalXP = 0;
 
-        //Paths
 
-        public string full_time_txt = @"C:\Users\Tomi\OneDrive\Asztali gép\To Do App\ToDo\ToDo\Text Files\total time.txt";
-        public string total_xp_txt = @"C:\Users\Tomi\OneDrive\Asztali gép\To Do App\ToDo\ToDo\Text Files\total xp.txt";
-        public string highest_lvl_txt = @"C:\Users\Tomi\OneDrive\Asztali gép\To Do App\ToDo\ToDo\Text Files\level.txt";
 
         public Form1()
         {
@@ -196,8 +201,8 @@ namespace ToDo
         {
             try
             {
-                Process.Start(path);
                 Application.Exit();
+                Process.Start(path);
             }
             catch (Exception ex)
             {
@@ -207,7 +212,7 @@ namespace ToDo
 
         private void Home_Click(object sender, EventArgs e)
         {
-            Execute(@"C:\Users\Tomi\OneDrive\Asztali gép\To Do App\ToDo\ToDo\Home\bin\Debug\Home.exe");
+            Execute(home_path);
         }
 
         private void Check_Bar()
@@ -272,23 +277,23 @@ namespace ToDo
                     Ranking_label.Text = $"{Rankings[0]}";
                     Character.Image = Image.FromFile(character_links[0]);
                     break;
-                case 2:
+                case 5:
                     Ranking_label.Text = $"{Rankings[1]}";
                     Character.Image = Image.FromFile(character_links[1]);
                     break;
-                case 3:
+                case 25:
                     Ranking_label.Text = $"{Rankings[2]}";
                     Character.Image = Image.FromFile(character_links[2]);
                     break;
-                case 4:
+                case 50:
                     Ranking_label.Text = $"{Rankings[3]}";
                     Character.Image = Image.FromFile(character_links[3]);
                     break;
-                case 5:
+                case 75:
                     Ranking_label.Text = $"{Rankings[4]}";
                     Character.Image = Image.FromFile(character_links[4]);
                     break;
-                case int n when(n >= 6):
+                case int n when(n >= 100):
                     Ranking_label.Text = $"{Rankings[5]}";
                     Character.Image = Image.FromFile(character_links[5]);
                     break;
@@ -388,8 +393,8 @@ namespace ToDo
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            Character.Image = Image.FromFile(@"C:\Users\Tomi\OneDrive\Asztali gép\To Do App\ToDo\ToDo\Sprites\Viking.png");
-            Bar.Image = Image.FromFile(@"C:\Users\Tomi\OneDrive\Asztali gép\To Do App\ToDo\ToDo\Bars\bar1.jpg");
+            Character.Image = Image.FromFile(character_links[0]);
+            Bar.Image = Image.FromFile(bar_links[0]);
         }
 
 
