@@ -29,8 +29,14 @@ namespace Statistics
             InitializeComponent();
             Home.Click += Home_Click;
             this.Load += Form1_Load;
+            this.FormBorderStyle = FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
+            this.MinimizeBox = true;
+            this.Icon = new System.Drawing.Icon(@"C:\Users\Tomi\OneDrive\Asztali gép\To Do App\ToDo\ToDo\Icons\add_list-48_45484.ico");
 
         }
+
+        public string home_path = @"C:\Users\Tomi\OneDrive\Asztali gép\To Do App\ToDo\ToDo\Home\bin\Debug\Home.exe";
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -83,7 +89,7 @@ namespace Statistics
 
         private void Home_Click(object sender, EventArgs e)
         {
-            Execute(@"C:\Users\Tomi\OneDrive\Asztali gép\To Do App\ToDo\ToDo\Home\bin\Debug\Home.exe");
+            Execute(home_path);
         }
 
         private void Execute(string path)

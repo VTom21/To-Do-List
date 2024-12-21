@@ -291,7 +291,7 @@ namespace ToDo
             this.Controls.Add(this.Add);
             this.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "To Do List";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.Character)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Bar)).EndInit();

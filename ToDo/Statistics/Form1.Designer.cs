@@ -145,7 +145,7 @@ namespace Statistics
             this.Controls.Add(this.xp_label);
             this.Controls.Add(this.label1);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Statistics";
             this.ResumeLayout(false);
             this.PerformLayout();
 

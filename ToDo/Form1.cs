@@ -46,6 +46,7 @@ namespace ToDo
                 return (Task, Priority).GetHashCode();
             }
 
+
         }
 
         public string newItem;
@@ -100,6 +101,7 @@ namespace ToDo
         public Form1()
         {
             InitializeComponent();
+            this.Icon = new System.Drawing.Icon(@"C:\Users\Tomi\OneDrive\Asztali gép\To Do App\ToDo\ToDo\Icons\add_list-48_45484.ico");
             Add.Click += Add_Click;
             Remove.Click += Remove_Click;
             Clear.Click += Clear_Click;
@@ -114,6 +116,9 @@ namespace ToDo
             PriorityBox.Items.Add("High");
 
             PriorityBox.SelectedItem = "Low";
+            this.FormBorderStyle = FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
+            this.MinimizeBox = true;
         }
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
@@ -306,48 +311,45 @@ namespace ToDo
 
         private void ClearChecked_Click(object sender, EventArgs e)
         {
-            var Items = new List<Tasks>();
+            var itemsToRemove = new List<Tasks>(); 
+            int totalXPForCheckedTasks = 0; 
 
             foreach (var checkedItem in Content.CheckedItems)
             {
                 if (checkedItem is Tasks task)
                 {
-                    Items.Add(task);
+                    int taskXP = 0;
+
+                    switch (task.Priority)
+                    {
+                        case "Low":
+                            taskXP = 5;
+                            break;
+                        case "Medium":
+                            taskXP = 10;
+                            break;
+                        case "High":
+                            taskXP = 15;
+                            break;
+                        default:
+                            taskXP = 5; 
+                            break;
+                    }
+
+                    totalXPForCheckedTasks += taskXP;
+                    totalXP += taskXP;
+                    itemsToRemove.Add(task); 
                 }
             }
 
-
-            foreach (var task in Items)
-            {
-                int taskXP = 0;
-
-                switch (task.Priority)
-                {
-                    case "Low":
-                        taskXP = 5;
-                        break;
-                    case "Medium":
-                        taskXP = 10;
-                        break;
-                    case "High":
-                        taskXP = 150;
-                        break;
-                    default:
-                        taskXP = 5;
-                        break;
-                }
-
-                totalXP += taskXP;
-            }
-
-            XP += totalXP;
+            XP += totalXPForCheckedTasks;
 
             while (XP >= xp_limit)
             {
                 XP -= xp_limit;
                 xp_limit += 100;
                 level++;
-                Check_Ranking();
+                Check_Ranking(); 
             }
 
             xp_label.Text = $"{XP}/{xp_limit} XP";
@@ -355,12 +357,13 @@ namespace ToDo
 
             Check_Bar();
 
-            foreach (var task in Items)
+            foreach (var task in itemsToRemove)
             {
-                Content.Items.Remove(task);
+                Content.Items.Remove(task); 
             }
-
         }
+
+
 
 
 
@@ -378,11 +381,29 @@ namespace ToDo
         private void Remove_Click(object sender, EventArgs e)
         {
             newItem = Input.Text;
+            Tasks remove = null;
 
-            if (Content.Items.Contains(newItem))
+
+            if (!string.IsNullOrEmpty(newItem))
             {
-                Content.Items.Remove(Input.Text);
-                Input.Clear();
+                foreach (Tasks task in Content.Items)
+                {
+                    if (task.Task == newItem)
+                    {
+                        remove = task;
+                        break; 
+                    }
+                }
+
+                if (remove != null)
+                {
+                    Content.Items.Remove(remove);
+                    Input.Clear();
+                }
+                else
+                {
+                    MessageBox.Show("No Item to delete!", "Remove Fail", MessageBoxButtons.OK);
+                }
             }
             else
             {

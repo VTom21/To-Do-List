@@ -24,8 +24,16 @@ namespace Home
             LevelBtn.Click += LevelBtn_Click;
             StatsBtn.Click += StatsBtn_Click;
             Version.Text = $"Version: v{Version_Number}";
+            this.FormBorderStyle = FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
+            this.MinimizeBox = true;
+            this.Icon = new System.Drawing.Icon(@"C:\Users\Tomi\OneDrive\Asztali gép\To Do App\ToDo\ToDo\Icons\add_list-48_45484.ico");
 
         }
+
+        public string stats_txt = @"C:\Users\Tomi\OneDrive\Asztali gép\To Do App\ToDo\ToDo\Statistics\bin\Debug\Statistics.exe";
+        public string todo_txt = @"C:\Users\Tomi\OneDrive\Asztali gép\To Do App\ToDo\ToDo\bin\Debug\ToDo.exe";
+        public string lvl_txt = @"C:\Users\Tomi\OneDrive\Asztali gép\To Do App\ToDo\ToDo\Level System\bin\Debug\Level System.exe";
         private void Execute(string path)
         {
             try
@@ -41,12 +49,12 @@ namespace Home
 
         private void StatsBtn_Click(object sender, EventArgs e)
         {
-            Execute(@"C:\Users\Tomi\OneDrive\Asztali gép\To Do App\ToDo\ToDo\Statistics\bin\Debug\Statistics.exe");
+            Execute(stats_txt);
         }
 
         private void LevelBtn_Click(object sender, EventArgs e)
         {
-           
+            Execute(lvl_txt);
         }
 
         private void Quit_Click(object sender, EventArgs e)
@@ -56,7 +64,7 @@ namespace Home
 
         private void Start_Click(object sender, EventArgs e)
         {
-            Execute(@"C:\Users\Tomi\OneDrive\Asztali gép\To Do App\ToDo\ToDo\bin\Debug\ToDo.exe");
+            Execute(todo_txt);
         }
 
         private void Form1_Load(object sender, EventArgs e)
