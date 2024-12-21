@@ -84,9 +84,13 @@ namespace ToDo
 
         public int xp_limit = 100;
 
+        public int totalXP = 0;
+
         //Paths
 
         public string full_time_txt = @"C:\Users\Tomi\OneDrive\Asztali gép\To Do App\ToDo\ToDo\Text Files\total time.txt";
+        public string total_xp_txt = @"C:\Users\Tomi\OneDrive\Asztali gép\To Do App\ToDo\ToDo\Text Files\total xp.txt";
+        public string highest_lvl_txt = @"C:\Users\Tomi\OneDrive\Asztali gép\To Do App\ToDo\ToDo\Text Files\level.txt";
 
         public Form1()
         {
@@ -118,7 +122,11 @@ namespace ToDo
             else
             {
                 TotalTime();
+                TotalXP();
+                Highest_lvl();
             }
+
+
         }
 
         private void TotalTime()
@@ -127,6 +135,33 @@ namespace ToDo
             {
                 writer.WriteLine(total_time);
             }
+        }
+
+        private void TotalXP()
+        {
+            using (StreamWriter writer = new StreamWriter(total_xp_txt, true))
+            {
+                writer.WriteLine(totalXP);
+            }
+        }
+
+        private void Highest_lvl()
+        {
+            int line;
+            using (StreamReader reader = new StreamReader(highest_lvl_txt))
+            {
+                line = int.Parse(reader.ReadLine());
+            }
+
+
+            if (level > line)
+            {
+                using (StreamWriter writer = new StreamWriter(highest_lvl_txt, false))
+                {
+                    writer.WriteLine(level);
+                }
+            }
+
         }
 
         private void Timer_Start()
@@ -276,7 +311,6 @@ namespace ToDo
                 }
             }
 
-            int totalXP = 0;
 
             foreach (var task in Items)
             {

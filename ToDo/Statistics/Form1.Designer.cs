@@ -33,9 +33,9 @@ namespace Statistics
             this.xp_label = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.total_xp_label = new System.Windows.Forms.Label();
+            this.total_time_label = new System.Windows.Forms.Label();
+            this.highest_lvl_label = new System.Windows.Forms.Label();
             this.Home = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -83,38 +83,38 @@ namespace Statistics
             this.label3.TabIndex = 6;
             this.label3.Text = "Highest lvl reached:";
             // 
-            // label4
+            // total_xp_label
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Sitka Text", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(95)))), ((int)(((byte)(95)))));
-            this.label4.Location = new System.Drawing.Point(264, 345);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(17, 19);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "0";
+            this.total_xp_label.AutoSize = true;
+            this.total_xp_label.Font = new System.Drawing.Font("Sitka Text", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.total_xp_label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(95)))), ((int)(((byte)(95)))));
+            this.total_xp_label.Location = new System.Drawing.Point(264, 345);
+            this.total_xp_label.Name = "total_xp_label";
+            this.total_xp_label.Size = new System.Drawing.Size(17, 19);
+            this.total_xp_label.TabIndex = 6;
+            this.total_xp_label.Text = "0";
             // 
-            // label5
+            // total_time_label
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Sitka Text", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(95)))), ((int)(((byte)(95)))));
-            this.label5.Location = new System.Drawing.Point(264, 378);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(17, 19);
-            this.label5.TabIndex = 6;
-            this.label5.Text = "0";
+            this.total_time_label.AutoSize = true;
+            this.total_time_label.Font = new System.Drawing.Font("Sitka Text", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.total_time_label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(95)))), ((int)(((byte)(95)))));
+            this.total_time_label.Location = new System.Drawing.Point(264, 378);
+            this.total_time_label.Name = "total_time_label";
+            this.total_time_label.Size = new System.Drawing.Size(17, 19);
+            this.total_time_label.TabIndex = 6;
+            this.total_time_label.Text = "0";
             // 
-            // label6
+            // highest_lvl_label
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Sitka Text", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(95)))), ((int)(((byte)(95)))));
-            this.label6.Location = new System.Drawing.Point(264, 415);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(17, 19);
-            this.label6.TabIndex = 6;
-            this.label6.Text = "0";
+            this.highest_lvl_label.AutoSize = true;
+            this.highest_lvl_label.Font = new System.Drawing.Font("Sitka Text", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.highest_lvl_label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(95)))), ((int)(((byte)(95)))));
+            this.highest_lvl_label.Location = new System.Drawing.Point(264, 415);
+            this.highest_lvl_label.Name = "highest_lvl_label";
+            this.highest_lvl_label.Size = new System.Drawing.Size(17, 19);
+            this.highest_lvl_label.TabIndex = 6;
+            this.highest_lvl_label.Text = "0";
             // 
             // Home
             // 
@@ -139,9 +139,9 @@ namespace Statistics
             this.Controls.Add(this.Home);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
+            this.Controls.Add(this.highest_lvl_label);
+            this.Controls.Add(this.total_time_label);
+            this.Controls.Add(this.total_xp_label);
             this.Controls.Add(this.xp_label);
             this.Controls.Add(this.label1);
             this.Name = "Form1";
@@ -157,9 +157,9 @@ namespace Statistics
         private System.Windows.Forms.Label xp_label;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label total_xp_label;
+        private System.Windows.Forms.Label total_time_label;
+        private System.Windows.Forms.Label highest_lvl_label;
         private System.Windows.Forms.Button Home;
     }
 }

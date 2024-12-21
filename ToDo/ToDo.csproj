@@ -100,7 +100,9 @@
     <Content Include="Sprites\Mage.png" />
     <Content Include="Sprites\Rogue.png" />
     <Content Include="Sprites\Viking.png" />
+    <Content Include="Text Files\level.txt" />
     <Content Include="Text Files\total time.txt" />
+    <Content Include="Text Files\total xp.txt" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
