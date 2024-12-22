@@ -1,51 +1,201 @@
-# To-Do List App
+<h1 align="center">ToDo App - A Gamified Task Management System</h1>
 
-A simple and interactive To-Do List application built with C# and Windows Forms. This app allows users to add, remove, and manage tasks with priorities. It also tracks time spent on tasks and provides XP-based leveling mechanics to gamify task management. The app includes a customizable character avatar and progress bar for a more engaging experience.
 
-## Features
+<div align="center">
 
-- **Add Tasks**: Add new tasks with a title and priority (Low, Medium, High).
-- **Remove Tasks**: Remove a task from the list.
-- **Clear All Tasks**: Clear all tasks in the list.
-- **Mark Tasks as Completed**: Tasks can be marked as completed, granting XP based on priority.
-- **XP and Leveling**: The user gains XP for completed tasks, which leads to leveling up.
-- **Ranking System**: User's rank changes based on their level, with associated character images.
-- **Progress Bar**: A visual bar shows the user's progress towards their next level.
-- **Timer**: A timer tracks the time spent using the app.
-- **Customizable Theme**: The app allows users to customize backgrounds and character images.
-- **Persistent Storage**: Saves total XP, level, and time in text files.
+![Build Status](https://img.shields.io/badge/Build-Passing-lightblue) ![Version](https://img.shields.io/badge/Version-1.0-ghostwhite) ![License](https://img.shields.io/badge/License-MIT-lightblue) ![Last Commit](https://img.shields.io/badge/Last_Commit-1_day_ago-ghostwhite) ![npm](https://img.shields.io/badge/npm-v1.1-lightblue)
 
-## Technologies Used
+![Gmail](https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white)
+![Visual Studio](https://img.shields.io/badge/Visual%20Studio-5C2D91.svg?style=for-the-badge&logo=visual-studio&logoColor=white)
+![C#](https://img.shields.io/badge/c%23-%23239120.svg?style=for-the-badge&logo=csharp&logoColor=white)
+![Stack Overflow](https://img.shields.io/badge/-Stackoverflow-FE7A16?style=for-the-badge&logo=stack-overflow&logoColor=white)
+![Discord](https://img.shields.io/badge/Discord-%235865F2.svg?style=for-the-badge&logo=discord&logoColor=white)
 
-- **C#**: Main programming language.
-- **Windows Forms**: UI framework used for the app.
-- **StreamWriter/StreamReader**: For saving and loading total time, XP, and highest level from text files.
 
-## File Paths (Local Storage)
+</div>
 
-- **Home Path**: The path to an executable that can be opened from within the app (`Home.exe`).
-- **Character Images**: Image paths for the character avatars (Viking, Mage, Rogue, etc.).
-- **Bars**: Image paths for different progress bars based on the user's XP.
-- **Text Files**:
-  - `total time.txt`: Stores the total time spent in the app.
-  - `total xp.txt`: Stores the total XP accumulated.
-  - `level.txt`: Stores the current highest level achieved.
+Welcome to the **ToDo App**, a next-generation **task management system** that combines productivity with a **gaming experience**. 🎮✨ Track your **XP**, level up, earn rewards, and keep an eye on your stats—all while managing your tasks efficiently!
 
-### Local File Example Paths:
-- `Home.exe` (Executable): `"C:\Users\Tomi\OneDrive\Asztali gép\To Do App\ToDo\ToDo\Home\bin\Debug\Home.exe"`
-- Character Images: `"C:\Users\Tomi\OneDrive\Asztali gép\To Do App\ToDo\ToDo\Sprites\Viking.png"`
+> **Level up your productivity!**
 
-## Installation
+---
+
+<p align="left">
+  <img src="https://github.com/VTom21/To-Do-List/blob/master/ToDo/Icons/add_list-48_45484.ico" alt="ToDo App Banner" height="75">
+</p>
+
+---
+
+## 🌟 **Table of Contents**
+
+| Section               | Link                                  |
+|-----------------------|---------------------------------------|
+| [Overview](#overview)  | Overview                             |
+| [Features](#features)  | Features                             |
+| [Technologies](#technologies) | Technologies                        |
+| [File Paths](#file-paths) | File Paths                           |
+| [Installation](#installation) | Installation                        |
+| [Usage](#usage)        | Usage                                 |
+| [Contributing](#contributing) | Contributing                        |
+| [License](#license)    | License                               |
+| [Acknowledgments](#acknowledgments) | Acknowledgments                    |
+| [Contact](#contact)    | Contact                               |
+| [Screenshots](#screenshots) | Screenshots                         |
+
+---
+
+## 🌐 **Overview**
+
+**ToDo App** is more than just a productivity tool—it's a **gamified experience** that helps you stay on top of your tasks while earning **XP** and **leveling up**. With each completed task, you gain **XP** and **progress through levels**, unlocking rewards like **higher ranks** and other in-game perks. 📈
+
+### 🎮 **What Makes It Unique?**
+- **Gamified Task Management**: Manage tasks as a game, where every task completed is an opportunity to gain XP.
+- **XP and Levels**: Track your progress and unlock rewards as you level up and gain XP.
+- **Statistics**: Monitor your performance—track total time spent, XP earned, and the highest level you've reached.
+
+---
+
+## ⚡ **Features**
+
+### 🏠 **Home App** - Your Central Hub
+
+The **Home App** serves as your personal dashboard for task management:
+
+- **Start**: Opens the **ToDo App** to begin managing tasks.
+- **Level System**: Track your XP, level, and rank.
+- **Statistics**: View your performance stats like total time spent, XP earned, and highest level.
+- **Quit**: Exit the app when you're done.
+
+### 🎮 **Level System** - Track Your Progress
+
+The **Level System** is where you gain **XP** and **level up** as you complete tasks. The more tasks you finish, the higher your **level** and **rank** increase!
+
+- **Levels**: From **Level 1** to **Level 100+**.
+- **Ranks**: Increase your rank as you progress (e.g., **Rookie**, **Sergeant**, **Guardian**, **Ace**).
+
+### 📊 **Statistics App** - Your Personal Performance Dashboard
+
+The **Statistics App** provides insights into your productivity:
+
+- **Total Time**: Tracks the total time spent on tasks (in days, hours, minutes, and seconds).
+- **Total XP**: View the total XP earned across all tasks.
+- **Highest Level**: Displays your highest level achieved.
+
+---
+
+### 🏆 **Achievements & Rewards**
+
+With each completed task and level progression, unlock **rewards**:
+
+- **XP Boosts**: Earn boosts that increase your XP for subsequent tasks.
+- **Special Rewards**: Gain other in-game perks and unlockables at certain level milestones.
+- **Badges**: Earn badges for achievements, such as completing a set number of tasks.
+
+---
+
+## 💻 **Technologies Used**
+
+The app uses modern tools and technologies:
+
+| Technology          | Description                                   |
+|---------------------|-----------------------------------------------|
+| **C#**              | The core programming language powering the app.|
+| **Windows Forms**   | For building a sleek and user-friendly graphical interface. |
+| **File I/O**        | Read and write progress data (total XP, level, and time). |
+| **Graphics & Avatars** | Custom character avatars to enhance the gamified experience. |
+
+---
+
+## 📁 **File Paths (Local Storage)**
+
+This app requires specific file paths for reading and storing data:
+
+### Text Files
+
+| File Name          | Path                                                      |
+|--------------------|-----------------------------------------------------------|
+| **Total Time**     | `C:\Users\Tomi\OneDrive\ToDoApp\TextFiles\total_time.txt` |
+| **Total XP**       | `C:\Users\Tomi\OneDrive\ToDoApp\TextFiles\total_xp.txt`   |
+| **Highest Level**  | `C:\Users\Tomi\OneDrive\ToDoApp\TextFiles\level.txt`      |
+
+> **Tip**: Ensure these paths match the locations on your system for proper functionality.
+
+---
+
+### **Code Snippets**:
+
+**Priority XP assignment logic**:
+
+```csharp
+switch(task.Priority)
+{
+    case"Low":
+        taskXP=5;
+        break;
+    case"Medium":
+        taskXP=10;
+        break;
+    case"High":
+        taskXP=15;
+        break;
+    default:
+        taskXP=5;
+        break;
+}
+```
+
+**Class for Handling Tasks & Priorities**:
+
+```csharp
+class Tasks
+        {
+
+            public string Task { get; set; }
+            public string Priority { get; set; }
+
+            public Tasks(string _Task, string _Priority)
+            {
+                Task = _Task;
+                Priority = _Priority;
+            }
+
+            public override string ToString()
+            {
+                return $"{Task} - {Priority}";
+            }
+
+            public override bool Equals(object obj)
+            {
+                if (obj is Tasks otherTask)
+                {
+                    return this.Task == otherTask.Task && this.Priority == otherTask.Priority;
+                }
+                return false;
+            }
+
+            public override int GetHashCode()
+            {
+                return (Task, Priority).GetHashCode();
+            }
+
+
+        }
+```
+
+## 🏁 **Installation**
 
 ### Prerequisites
 
-Make sure you have the following installed:
-- **Visual Studio** or any other C# compatible IDE.
-- **.NET Framework 4.7.2** or later.
+To run the **ToDo App**, ensure you have the following installed:
 
-### Setup
+| Prerequisite           | Description                                   |
+|------------------------|-----------------------------------------------|
+| **Visual Studio**      | IDE to build and run the app.                 |
+| **.NET Framework 4.7.2** or later | Required to run the app.                   |
 
-1. Clone or download the repository to your local machine.
-   
+### Steps to Install
+
+1. **Clone the repository**:
+
    ```bash
-   git clone https://github.com/your-username/to-do-list-app.git
+   git clone https://github.com/your-username/todo-app.git
