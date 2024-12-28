@@ -9,10 +9,18 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Diagnostics;
 using System.IO;
+using System.Windows.Forms.DataVisualization.Charting;
 namespace Statistics
 {
     public partial class Form1: Form
     {
+        public ChartArea chartArea1 = new ChartArea("MainArea1");
+        public Series barSeries = new Series("Tasks Completed");
+        public ChartArea chartArea2 = new ChartArea("MainArea2");
+        public Series pieSeries = new Series("Task Categories");
+
+        int xp_int = 0;
+
 
         public List<int> total_time = new List<int>();
         public List<int> total_XP = new List<int>();
@@ -43,6 +51,32 @@ namespace Statistics
             Total_Time();
             Total_XP();
             Highest_lvl();
+            Chart_Call();
+        }
+
+        private void Chart_Call()
+        {
+            chart1.Series.Clear();
+            chart1.ChartAreas.Clear();
+
+            chart1.ChartAreas.Add(chartArea1);
+
+
+
+            barSeries.ChartType = SeriesChartType.Bar; 
+            barSeries.Color = System.Drawing.Color.RoyalBlue; 
+
+            chart1.Series.Add(barSeries);
+
+            chart2.Series.Clear();
+            chart2.ChartAreas.Clear();
+
+            chart2.ChartAreas.Add(chartArea2);
+
+            pieSeries.ChartType = SeriesChartType.Pie; 
+            pieSeries.Color = System.Drawing.Color.RoyalBlue; 
+
+            chart2.Series.Add(pieSeries);
         }
 
         
@@ -62,6 +96,8 @@ namespace Statistics
             seconds = total_time.Sum() % 60;
 
             total_time_label.Text = $"{days:D1}d {hours:D1}h {minutes:D1}m {seconds:D1}s ";
+            barSeries.Points.AddXY($"Total Time", total_time.Sum());
+            pieSeries.Points.AddXY($"Total Time", total_time.Sum());
 
         }
 
@@ -76,6 +112,8 @@ namespace Statistics
             }
 
             total_xp_label.Text = $"{total_XP.Sum()} XP";
+            barSeries.Points.AddXY("Total XP", total_XP.Sum());
+            pieSeries.Points.AddXY("Total XP", total_XP.Sum());
         }
 
         private void Highest_lvl()
@@ -84,6 +122,9 @@ namespace Statistics
             {
 
                 highest_lvl_label.Text = $"lvl {reader.ReadLine()}";
+                xp_int = Convert.ToInt32(reader.ReadLine());
+                barSeries.Points.AddXY("Highest Level", xp_int);
+                pieSeries.Points.AddXY("Highest Level", xp_int);
             }
         }
 

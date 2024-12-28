@@ -414,6 +414,7 @@ namespace ToDo
 
         private void Form1_Load(object sender, EventArgs e)
         {
+
             Character.Image = Image.FromFile(character_links[0]);
             Bar.Image = Image.FromFile(bar_links[0]);
         }
