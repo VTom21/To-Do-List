@@ -119,6 +119,7 @@ namespace ToDo
             this.FormBorderStyle = FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.MinimizeBox = true;
+            this.Themes.SelectedIndexChanged += new System.EventHandler(this.comboBoxThemes_SelectedIndexChanged);
         }
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
@@ -414,9 +415,399 @@ namespace ToDo
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            Themes.Items.Add("Cyan");
+            Themes.Items.Add("Dark");
+            Themes.Items.Add("Purple");
+            Themes.Items.Add("Holographic");
+            Themes.Items.Add("Tropical");
+            Themes.Items.Add("Red");
+
+            Themes.SelectedIndex = 0;
+            string selectedTheme = Themes.SelectedItem.ToString();
+
+            ApplyTheme(selectedTheme);
 
             Character.Image = Image.FromFile(character_links[0]);
             Bar.Image = Image.FromFile(bar_links[0]);
+        }
+
+        private void ApplyTheme(string theme)
+        {
+            switch (theme)
+            {
+                case "Dark":
+                    Dark_Theme();
+                    break;
+                case "Purple":
+                    Purple_Theme();
+                    break;
+                case "Holographic":
+                    Holographic_White();
+                    break;
+                case "Tropical":
+                    Orange_Theme();
+                    break;
+                case "Red":
+                    Red_Theme();
+                    break;
+                default:
+                    Default_Theme(); 
+                    break;
+            }
+        }
+
+        private void Default_Theme()
+        {
+
+            ApplyThemeToControls(
+                System.Drawing.Color.FromArgb(199, 232, 239),  
+                System.Drawing.Color.FromArgb(92, 95, 95)     
+            );
+
+
+            Themes.ForeColor = System.Drawing.Color.FromArgb(92, 95, 95);
+            Themes.BackColor = System.Drawing.Color.FromArgb(199, 232, 239);
+
+            foreach (Control ctrl in this.Controls)
+            {
+                if (ctrl is Button)
+                {
+                    Button btn = (Button)ctrl;
+                    btn.FlatStyle = FlatStyle.Flat;
+                    btn.ForeColor = Color.FromArgb(92, 95, 95);
+                    btn.BackColor = Color.FromArgb(160, 222, 236);
+                    btn.FlatAppearance.BorderColor = Color.White;
+                }
+                if (ctrl is TextBox || ctrl is RichTextBox)
+                {
+                    TextBox tb = (TextBox)ctrl;
+                    tb.BackColor = Color.FromArgb(160, 222, 236);
+                    tb.ForeColor = Color.FromArgb(92, 95, 95);
+                    tb.BorderStyle = BorderStyle.None;
+                    tb.Font = new Font("Sitka Text", tb.Font.Size, FontStyle.Regular);
+                }
+                if (ctrl is CheckedListBox)
+                {
+                    CheckedListBox clb = (CheckedListBox)ctrl;
+                    clb.ForeColor = Color.FromArgb(92, 95, 95);
+                    clb.BackColor = Color.FromArgb(160, 222, 236);
+                    clb.Font = new Font("Sitka Text", 14.25F, FontStyle.Regular); 
+
+                }
+                if (ctrl is ComboBox)
+                {
+                    ComboBox cb = (ComboBox)ctrl;
+                    cb.DropDownStyle = ComboBoxStyle.DropDownList; 
+                    cb.ForeColor = Color.FromArgb(92, 95, 95);
+                    cb.BackColor = Color.FromArgb(160, 222, 236);
+                }
+            }
+
+        }
+
+        private void Dark_Theme()
+        {
+            this.BackColor = Color.FromArgb(30, 30, 30);  
+            this.ForeColor = Color.White;  
+
+            ApplyThemeToControls(Color.FromArgb(30, 30, 30), Color.Red);
+
+            Themes.ForeColor = Color.White;
+            Themes.BackColor = Color.FromArgb(45, 45, 45);  
+
+            foreach (Control ctrl in this.Controls)
+            {
+                if (ctrl is Button)
+                {
+                    Button btn = (Button)ctrl;
+                    btn.FlatStyle = FlatStyle.Flat;
+                    btn.ForeColor = Color.Red;  
+                    btn.BackColor = Color.FromArgb(65, 67, 69);  
+                    btn.FlatAppearance.BorderColor = Color.White;  
+                }
+
+                if (ctrl is TextBox || ctrl is RichTextBox)
+                {
+                    TextBox tb = (TextBox)ctrl;
+                    tb.BackColor = Color.FromArgb(65, 67, 69);  
+                    tb.ForeColor = Color.Red;  
+                    tb.BorderStyle = BorderStyle.None;
+                    tb.Font = new Font("Sitka Text", tb.Font.Size, FontStyle.Regular);
+                }
+
+                if (ctrl is CheckedListBox)
+                {
+                    CheckedListBox clb = (CheckedListBox)ctrl;
+                    clb.ForeColor = Color.Red;  
+                    clb.BackColor = Color.FromArgb(65, 67, 69);  
+                    clb.Font = new Font("Sitka Text", 14.25F, FontStyle.Regular);
+                }
+
+                if (ctrl is ComboBox)
+                {
+                    ComboBox cb = (ComboBox)ctrl;
+                    cb.DropDownStyle = ComboBoxStyle.DropDownList;  
+                    cb.ForeColor = Color.Red;  
+                    cb.BackColor = Color.FromArgb(65, 67, 69);  
+                }
+
+            }
+        }
+
+        private void Purple_Theme()
+        {
+            this.BackColor = Color.FromArgb(157, 80, 187);  
+            this.ForeColor = Color.FromArgb(255, 255, 255);  
+
+            ApplyThemeToControls(Color.FromArgb(157, 80, 187), Color.FromArgb(255, 255, 255));
+
+            Themes.ForeColor = Color.FromArgb(255, 255, 255);  
+            Themes.BackColor = Color.FromArgb(35, 37, 38);  
+
+            foreach (Control ctrl in this.Controls)
+            {
+                if (ctrl is Button)
+                {
+                    Button btn = (Button)ctrl;
+                    btn.FlatStyle = FlatStyle.Flat;
+                    btn.ForeColor = Color.FromArgb(255, 255, 255);  
+                    btn.BackColor = Color.FromArgb(110, 72, 170);  
+                    btn.FlatAppearance.BorderColor = Color.FromArgb(35, 37, 38);  
+                }
+
+                if (ctrl is TextBox || ctrl is RichTextBox)
+                {
+                    TextBox tb = (TextBox)ctrl;
+                    tb.BackColor = Color.FromArgb(35, 37, 38);  
+                    tb.ForeColor = Color.FromArgb(255, 255, 255);  
+                    tb.BorderStyle = BorderStyle.FixedSingle;  
+                }
+
+                if (ctrl is CheckedListBox)
+                {
+                    CheckedListBox clb = (CheckedListBox)ctrl;
+                    clb.ForeColor = Color.FromArgb(255, 255, 255);  
+                    clb.BackColor = Color.FromArgb(35, 37, 38);  
+                }
+
+                if (ctrl is ComboBox)
+                {
+                    ComboBox cb = (ComboBox)ctrl;
+                    cb.DropDownStyle = ComboBoxStyle.DropDownList;
+                    cb.ForeColor = Color.FromArgb(255, 255, 255);  
+                    cb.BackColor = Color.FromArgb(35, 37, 38);  
+                }
+
+                if (ctrl is ListBox)
+                {
+                    ctrl.ForeColor = Color.FromArgb(255, 255, 255);  
+                    ctrl.BackColor = Color.FromArgb(35, 37, 38);  
+                }
+            }
+        }
+
+        private void Holographic_White()
+        {
+            // Set form background to a very dark gray for a sleek, subtle look
+            this.BackColor = Color.FromArgb(30, 30, 30);
+            this.ForeColor = Color.FromArgb(255, 255, 255);
+
+            ApplyThemeToControls(Color.FromArgb(30, 30, 30), Color.FromArgb(255, 255, 255));
+
+            Themes.ForeColor = Color.FromArgb(255, 255, 255);
+            Themes.BackColor = Color.FromArgb(30, 30, 30);
+
+            foreach (Control ctrl in this.Controls)
+            {
+                if (ctrl is Button)
+                {
+                    Button btn = (Button)ctrl;
+                    btn.FlatStyle = FlatStyle.Flat;
+                    btn.ForeColor = Color.FromArgb(255, 255, 255);
+                    btn.BackColor = Color.FromArgb(80, 80, 80);
+                    btn.FlatAppearance.BorderColor = Color.FromArgb(80, 80, 80);
+                }
+
+                if (ctrl is TextBox || ctrl is RichTextBox)
+                {
+                    TextBox tb = (TextBox)ctrl;
+                    tb.BackColor = Color.FromArgb(40, 40, 40);
+                    tb.ForeColor = Color.FromArgb(255, 255, 255);
+                    tb.BorderStyle = BorderStyle.FixedSingle;
+                }
+
+                if (ctrl is CheckedListBox)
+                {
+                    CheckedListBox clb = (CheckedListBox)ctrl;
+                    clb.ForeColor = Color.FromArgb(255, 255, 255);
+                    clb.BackColor = Color.FromArgb(40, 40, 40);
+                }
+
+                if (ctrl is ComboBox)
+                {
+                    ComboBox cb = (ComboBox)ctrl;
+                    cb.DropDownStyle = ComboBoxStyle.DropDownList;
+                    cb.ForeColor = Color.FromArgb(255, 255, 255);
+                    cb.BackColor = Color.FromArgb(40, 40, 40);
+                }
+
+                if (ctrl is ListBox)
+                {
+                    ctrl.ForeColor = Color.FromArgb(255, 255, 255);
+                    ctrl.BackColor = Color.FromArgb(40, 40, 40);
+                }
+            }
+        }
+
+
+
+        private void Orange_Theme()
+        {
+            this.BackColor = Color.FromArgb(255, 153, 51);  // Form background
+            this.ForeColor = Color.FromArgb(255, 255, 255);  // White text
+
+            ApplyThemeToControls(Color.FromArgb(255, 153, 51), Color.FromArgb(255, 255, 255));
+
+            Themes.ForeColor = Color.FromArgb(255, 255, 255);
+            Themes.BackColor = Color.FromArgb(255, 153, 51);
+
+            foreach (Control ctrl in this.Controls)
+            {
+                if (ctrl is Button btn)
+                {
+                    btn.FlatStyle = FlatStyle.Flat;
+                    btn.ForeColor = Color.FromArgb(255, 255, 255);
+                    btn.BackColor = Color.FromArgb(255, 140, 0);  // Medium orange
+                    btn.FlatAppearance.BorderColor = Color.FromArgb(255, 120, 0);  // Darker orange for border
+                }
+                else if (ctrl is TextBox || ctrl is RichTextBox)
+                {
+                    TextBox tb = (TextBox)ctrl;
+                    tb.BackColor = Color.FromArgb(255, 179, 89);  // Light orange for textboxes
+                    tb.ForeColor = Color.FromArgb(0, 0, 0);  // Black text
+                    tb.BorderStyle = BorderStyle.FixedSingle;
+                }
+                else if (ctrl is CheckedListBox || ctrl is ComboBox || ctrl is ListBox)
+                {
+                    ctrl.ForeColor = Color.FromArgb(0, 0, 0);  // Black text for controls
+                    ctrl.BackColor = Color.FromArgb(255, 179, 89);  // Light orange for controls
+                }
+            }
+        }
+
+        private void Red_Theme()
+        {
+            // Set form background to a deep, vibrant red
+            this.BackColor = Color.FromArgb(229, 57, 53);  // Rich red color (#e53935)
+            this.ForeColor = Color.FromArgb(255, 255, 255);  // White text for high contrast
+
+            ApplyThemeToControls(Color.FromArgb(229, 57, 53), Color.FromArgb(255, 255, 255));
+
+            Themes.ForeColor = Color.FromArgb(255, 255, 255);
+            Themes.BackColor = Color.FromArgb(229, 57, 53);  // Same rich red for themes background
+
+            foreach (Control ctrl in this.Controls)
+            {
+                if (ctrl is Button btn)
+                {
+                    btn.FlatStyle = FlatStyle.Flat;
+                    btn.ForeColor = Color.FromArgb(255, 255, 255);
+                    btn.BackColor = Color.FromArgb(227, 93, 91);  // Slightly lighter red (#e35d5b)
+                    btn.FlatAppearance.BorderColor = Color.FromArgb(204, 51, 51);  // Darker red for the border
+                }
+                else if (ctrl is TextBox || ctrl is RichTextBox)
+                {
+                    TextBox tb = (TextBox)ctrl;
+                    tb.BackColor = Color.FromArgb(243, 134, 132);  // Lighter, soft red-pink for textboxes
+                    tb.ForeColor = Color.FromArgb(0, 0, 0);  // Black text
+                    tb.BorderStyle = BorderStyle.FixedSingle;
+                }
+                else if (ctrl is CheckedListBox || ctrl is ComboBox || ctrl is ListBox)
+                {
+                    ctrl.ForeColor = Color.FromArgb(0, 0, 0);  // Black text
+                    ctrl.BackColor = Color.FromArgb(243, 134, 132);  // Lighter, soft red-pink for controls
+                }
+            }
+        }
+
+
+        private void ApplyThemeToControls(Color backColor, Color foreColor)
+        {
+            this.BackColor = backColor;
+            this.ForeColor = foreColor;
+
+            foreach (Control ctrl in this.Controls)
+            {
+                ApplyControlColors(ctrl, backColor, foreColor);
+            }
+        }
+
+        private void ApplyControlColors(Control ctrl, Color backColor, Color foreColor)
+        {
+            ctrl.BackColor = backColor;
+            ctrl.ForeColor = foreColor;
+
+            if (ctrl is Button)
+            {
+                Button btn = (Button)ctrl;
+
+                btn.FlatStyle = FlatStyle.Flat;
+                btn.FlatAppearance.BorderSize = 0;
+                btn.Font = new System.Drawing.Font("Sitka Text", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+
+                btn.ForeColor = foreColor;
+                btn.BackColor = (backColor == Color.White) ? Color.FromArgb(160, 222, 236) : Color.FromArgb(50, 50, 50);
+            }
+
+            if (ctrl is ComboBox)
+            {
+                ComboBox cb = (ComboBox)ctrl;
+                cb.DropDownStyle = ComboBoxStyle.DropDownList; 
+                cb.ForeColor = foreColor;
+                cb.BackColor = (backColor == Color.White) ? Color.FromArgb(200, 214, 217) : Color.FromArgb(30, 30, 30);
+            }
+
+            if (ctrl is TextBox || ctrl is RichTextBox)
+            {
+                TextBox tb = (TextBox)ctrl;
+                tb.BackColor = (backColor == Color.White) ? Color.FromArgb(200, 214, 217) : Color.FromArgb(30, 30, 30);
+                tb.ForeColor = foreColor;
+                tb.BorderStyle = BorderStyle.None;
+                tb.Font = new Font("Sitka Text", tb.Font.Size, FontStyle.Regular);
+            }
+
+            if (ctrl is Label)
+            {
+                Label lbl = (Label)ctrl;
+                lbl.ForeColor = foreColor;
+                lbl.BackColor = backColor;
+                lbl.Font = new Font("Sitka Text", lbl.Font.Size, FontStyle.Regular);
+            }
+
+            if (ctrl is CheckedListBox)
+            {
+                CheckedListBox clb = (CheckedListBox)ctrl;
+                clb.ForeColor = foreColor;
+                clb.BackColor = (backColor == Color.White) ? Color.FromArgb(200, 214, 217) : Color.FromArgb(30, 30, 30);
+                clb.Font = new Font("Sitka Text", 14.25F, FontStyle.Regular);  
+
+            }
+
+            if (ctrl.HasChildren)
+            {
+                foreach (Control childCtrl in ctrl.Controls)
+                {
+                    ApplyControlColors(childCtrl, backColor, foreColor);
+                }
+            }
+        }
+
+
+
+        private void comboBoxThemes_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string selectedTheme = Themes.SelectedItem.ToString();
+            ApplyTheme(selectedTheme);
         }
 
 

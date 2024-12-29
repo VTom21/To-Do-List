@@ -50,6 +50,7 @@ namespace ToDo
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.Time_label = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.Themes = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.Character)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Bar)).BeginInit();
             this.SuspendLayout();
@@ -265,6 +266,17 @@ namespace ToDo
             this.label2.TabIndex = 10;
             this.label2.Text = "Priority:";
             // 
+            // Themes
+            // 
+            this.Themes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(214)))), ((int)(((byte)(217)))));
+            this.Themes.Font = new System.Drawing.Font("Sitka Text", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.Themes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(95)))), ((int)(((byte)(95)))));
+            this.Themes.FormattingEnabled = true;
+            this.Themes.Location = new System.Drawing.Point(308, 47);
+            this.Themes.Name = "Themes";
+            this.Themes.Size = new System.Drawing.Size(104, 29);
+            this.Themes.TabIndex = 8;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -273,6 +285,7 @@ namespace ToDo
             this.ClientSize = new System.Drawing.Size(424, 740);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.Time_label);
+            this.Controls.Add(this.Themes);
             this.Controls.Add(this.PriorityBox);
             this.Controls.Add(this.Bar);
             this.Controls.Add(this.Character);
@@ -321,6 +334,7 @@ namespace ToDo
         private Timer timer1;
         private Label Time_label;
         private Label label2;
+        private ComboBox Themes;
     }
 }
 
