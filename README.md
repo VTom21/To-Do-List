@@ -83,15 +83,6 @@ The **Statistics App** provides insights into your productivity:
 
 ---
 
-### 🏆 **Achievements & Rewards**
-
-With each completed task and level progression, unlock **rewards**:
-
-- **XP Boosts**: Earn boosts that increase your XP for subsequent tasks.
-- **Special Rewards**: Gain other in-game perks and unlockables at certain level milestones.
-- **Badges**: Earn badges for achievements, such as completing a set number of tasks.
-
----
 
 ## 💻 **Technologies Used**
 
