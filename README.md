@@ -182,6 +182,55 @@ class Tasks
         }
 ```
 
+## 🎨 **Themes in ToDo App**
+
+The **ToDo App** offers a variety of themes to suit different user preferences. These themes not only change the color palette of the app but also add personality and flair to the interface. Whether you prefer something **minimalistic**, **vibrant**, or **futuristic**, there’s a theme for everyone.
+
+### 🌐 **Available Themes**
+
+#### 1. **Cyan (Default)**
+- **Description**: The **Cyan** theme is the default theme and offers a bright and modern aesthetic. With its cool blue-green tones, it's easy on the eyes and provides a clean, refreshing feel for the app's interface.
+- **Main Colors**:
+  - **Background**: Cyan
+  - **Text**: White
+  - **Buttons**: Lighter Cyan with darker accents
+
+#### 2. **Dark**
+- **Description**: The **Dark** theme is perfect for those who prefer a more subdued and elegant interface. This theme uses deep shades of black and gray, with high-contrast white text, offering a sleek and professional look. Ideal for low-light environments or users who prefer darker screens.
+- **Main Colors**:
+  - **Background**: Dark Gray/Black
+  - **Text**: White
+  - **Buttons**: Dark Gray with contrasting borders
+
+#### 3. **Purple**
+- **Description**: The **Purple** theme brings a touch of royalty and elegance to the app. With its rich shades of purple and violet, it adds a sophisticated vibe while maintaining a modern look.
+- **Main Colors**:
+  - **Background**: Purple/Violet
+  - **Text**: White
+  - **Buttons**: Lighter purple with dark accents
+
+#### 4. **Holographic**
+- **Description**: The **Holographic** theme is inspired by futuristic, tech-inspired aesthetics. It uses neon colors and vibrant gradients, giving the app a futuristic and dynamic feel. This theme is perfect for users who want an interactive and visually stimulating experience.
+- **Main Colors**:
+  - **Background**: Gradient with neon hues
+  - **Text**: Bright colors with glowing effects
+  - **Buttons**: Neon borders and glowing hover effects
+
+#### 5. **Tropical**
+- **Description**: The **Tropical** theme brings a burst of sunshine and energy to the app. With warm, bright colors like oranges, yellows, and greens, it creates a vibrant and cheerful atmosphere that energizes the user. Perfect for those who enjoy a lively, summer-inspired environment.
+- **Main Colors**:
+  - **Background**: Tropical greens, oranges, and yellows
+  - **Text**: White or Black depending on the contrast
+  - **Buttons**: Bright, sunny accents
+
+#### 6. **Red**
+- **Description**: The **Red** theme is bold and intense, perfect for users who want to feel motivated and energized. It uses shades of red and pinks, making the interface powerful and full of energy.
+- **Main Colors**:
+  - **Background**: Deep red shades
+  - **Text**: White or black depending on contrast
+  - **Buttons**: Darker red with white highlights
+
+
 ## 🏁 **Installation**
 
 ### Prerequisites
